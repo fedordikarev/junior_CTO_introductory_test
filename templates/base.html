@@ -1,0 +1,21 @@
+{%- extends "bootstrap/base.html" %}
+
+{% block title %}Sample App for Flask-Bootstrap{% endblock %}
+{% import "bootstrap/fixes.html" as fixes %}
+
+{% block head %}
+{{super()}}
+
+{{fixes.ie8()}}
+{%- endblock %}
+
+{% block styles -%}
+    {{super()}}
+
+{% endblock %}
+
+{# Finally, round things out with navigation #}
+{% block navbar %}
+{{super()}}
+{# {{nav.frontend_top.render()}} #}
+{% endblock %}

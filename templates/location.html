@@ -1,0 +1,21 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{%- extends "base.html" %}
+
+{% block content %}
+   <div class="container">
+      <div class="jumbotron">
+        <h1>Check your weather</h1>
+      </div>
+   <div class="col-md-12">
+       {% if request.args.get('location') -%}
+       {{form|render_form()}}
+       {%- else -%}
+       {{wtf.quick_form(form, novalidate=True)}}
+       {%- endif %}
+   </div>
+
+   <div class="col-md-12">
+       {{weather}}
+   </div>
+{%- endblock %}
