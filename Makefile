@@ -7,7 +7,7 @@ build:
 	docker build -t $(tag_lc):latest .
 
 run:
-	docker run -P $(tag_lc):latest
+	docker run -p 5000:5000 $(ARGS) $(tag_lc):latest
 
 local:
 	FLASK_ENV=development flask run

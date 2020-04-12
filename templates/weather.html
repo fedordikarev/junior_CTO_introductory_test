@@ -8,7 +8,7 @@
         <h1>Check your weather</h1>
       </div>
    <div class="col-md-12">
-       {% if request.args.get('location') -%}
+       {% if request.args.get('city') -%}
        {{form|render_form()}}
        {%- else -%}
        {{wtf.quick_form(form, novalidate=True)}}
@@ -17,5 +17,8 @@
 
    <div class="col-md-12">
        {{weather}}
+   </div>
+   <div class="col-md-12">
+       {{banners}}
    </div>
 {%- endblock %}

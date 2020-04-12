@@ -3,5 +3,6 @@ from wtforms.fields import *
 from wtforms.validators import Required
 
 class LocationForm(FlaskForm):
-    location = TextField('Your location', validators=[Required()])
+    city = TextField('Your City (in English)', validators=[Required()])
+    weatherbit_api_key = StringField('Your personal WeatherBit API Key (optional)')
     submit = SubmitField('Check weather')
